@@ -1,0 +1,102 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3.5rem;
+  background-color: #FAF8F5;
+  border-bottom: 1px solid #C3C3C3;
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #60646B;
+  margin-left: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav a {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #60646B;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 0.25rem 0;
+}
+
+.nav a:hover {
+  color: #841B2D;
+}
+
+.nav a.activeLink {
+  color: #841B2D;
+}
+
+.phoneBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
+  border: 1.5px solid #841B2D;
+  border-radius: 10px;
+  color: #841B2D;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.phoneBtn:hover {
+  background-color: #841B2D;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .rightGroup {
+    gap: 1.2rem;
+  }
+
+  .nav {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .subtitle {
+    display: none;
+  }
+
+  .nav {
+    display: none;
+  }
+}

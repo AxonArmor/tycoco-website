@@ -1,0 +1,122 @@
+.espaceJeuxSection {
+  background-color: #EFECE6;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+  min-height: 500px;
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem 4rem 5rem 10rem;
+  gap: 1.8rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid #841B2D;
+  background-color: rgba(132, 27, 45, 0.1);
+  color: #841B2D;
+  font-size: 0.80rem;
+  font-weight: 700;
+  border-radius: 10px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: 'Young Serif', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000000;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #60646B;
+  max-width: 580px;
+}
+
+.featureList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  color: #60646B;
+  font-weight: 500;
+}
+
+.checkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.imageCol {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.parallaxImage {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  filter: brightness(0.85) contrast(1.1);
+  background-image: url('/imgEspaceClient.png');
+  background-attachment: fixed;
+  background-position: right center;
+  background-size: auto 100vh;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1100px) {
+  .espaceJeuxSection {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .contentCol {
+    padding: 3rem 2rem;
+  }
+
+  .imageCol {
+    height: 400px;
+  }
+
+  .parallaxImage {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .contentCol {
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .imageCol {
+    height: 300px;
+  }
+}
