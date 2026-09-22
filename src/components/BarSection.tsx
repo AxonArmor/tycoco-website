@@ -1,7 +1,11 @@
 import React from 'react';
+import { site, openDaysSummary } from '@/config/site';
 import styles from './BarSection.module.css';
 
 export default function BarSection() {
+  // Déduit des horaires : ce bloc ne peut pas contredire le tableau d'ouverture.
+  const openDays = openDaysSummary();
+
   return (
     <section id="bar" className={styles.barSection}>
       <div className={styles.container}>
@@ -16,27 +20,27 @@ export default function BarSection() {
 
         <div className={styles.content}>
           <div className={styles.badge}>
-            UNE AMBIANCE AUTHENTIQUE
+            LE LIEU
           </div>
 
           <h2 className={styles.title}>
-            Un bistrot de quartier,<br />populaire et breton
+            Un bistrot de village,<br />au bourg de {site.city}
           </h2>
 
           <div className={styles.statsGrid}>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>Plougourvest</span>
-              <span className={styles.statLabel}>Ancré dans le Finistère</span>
+              <span className={styles.statNumber}>{site.address.street}</span>
+              <span className={styles.statLabel}>Dans le Finistère</span>
             </div>
 
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>100%</span>
-              <span className={styles.statLabel}>Convivial & Local</span>
+              <span className={styles.statNumber}>{site.editor.name}</span>
+              <span className={styles.statLabel}>Vous accueille au comptoir</span>
             </div>
 
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>6 / 7j</span>
-              <span className={styles.statLabel}>Toujours ouvert exepté le dimanche</span>
+              <span className={styles.statNumber}>{openDays.value}</span>
+              <span className={styles.statLabel}>{openDays.label}</span>
             </div>
 
           </div>

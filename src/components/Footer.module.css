@@ -25,7 +25,7 @@
 }
 
 .brandTitle {
-  font-family: 'Young Serif', serif;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 2.1rem;
   font-weight: 400;
   color: #FFFFFF;
@@ -120,5 +120,27 @@
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+}
+.noticeBand {
+  margin: 3rem 10rem 0 10rem;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #9CA3AF;
+}
+
+.credit {
+  color: #6B7280;
+}
+
+@media (max-width: 1024px) {
+  .noticeBand {
+    margin: 2.5rem 0 0 0;
   }
 }

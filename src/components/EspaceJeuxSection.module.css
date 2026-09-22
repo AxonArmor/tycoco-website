@@ -29,7 +29,7 @@
 }
 
 .title {
-  font-family: 'Young Serif', serif;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -79,7 +79,6 @@
   min-height: 450px;
   filter: brightness(0.85) contrast(1.1);
   background-image: url('/imgEspaceClient.png');
-  background-attachment: fixed;
   background-position: right center;
   background-size: auto 100vh;
   background-repeat: no-repeat;

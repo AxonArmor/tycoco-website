@@ -4,12 +4,15 @@
   left: 0;
   right: 0;
   z-index: 9999;
+  background-color: #FAF8F5;
+  border-bottom: 1px solid #C3C3C3;
+}
+
+.topRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 3.5rem;
-  background-color: #FAF8F5;
-  border-bottom: 1px solid #C3C3C3;
 }
 
 .leftGroup {
@@ -98,5 +101,54 @@
 
   .nav {
     display: none;
+  }
+}
+.menuBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid #841B2D;
+  border-radius: 10px;
+  background: transparent;
+  color: #841B2D;
+  cursor: pointer;
+}
+
+/* Masquée par défaut : `display` en CSS auteur l'emporterait sinon sur
+   l'attribut `hidden`. Elle n'apparaît qu'ouverte, et sous 640px. */
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  border-top: 1px solid #C3C3C3;
+  padding: 0 1.5rem 0.75rem;
+}
+
+.mobileNav a {
+  padding: 0.85rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #60646B;
+  border-bottom: 1px solid #EDE9E3;
+}
+
+.mobileNav a:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 900px) {
+  .topRow {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .menuBtn {
+    display: inline-flex;
+  }
+
+  .mobileNav:not([hidden]) {
+    display: flex;
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { legalNotices } from '@/config/site';
 import styles from './ServicesSection.module.css';
 
 export default function ServicesSection() {
@@ -8,10 +9,10 @@ export default function ServicesSection() {
 
         <div className={styles.header}>
           <div className={styles.badge}>
-            À VOTRE SERVICE
+            SERVICES
           </div>
           <h2 className={styles.title}>
-            Tout ce dont vous avez besoin,<br />sous un même toit
+            Ce que vous trouvez<br />sur place
           </h2>
         </div>
 
@@ -29,8 +30,9 @@ export default function ServicesSection() {
             </div>
             <h3 className={styles.cardTitle}>Bar & Comptoir</h3>
             <p className={styles.cardDescription}>
-              Café expresso le matin, bières pression sélectionnées, cidre breton et boissons fraîches à toute heure dans une ambiance chaleureuse.
+              Café, thé et boissons fraîches au comptoir ou en salle. Bières à la pression et en bouteille, cidres de Bretagne.
             </p>
+            <p className={styles.cardNotice}>{legalNotices.alcohol}</p>
           </div>
 
           <div className={styles.card}>
@@ -40,10 +42,11 @@ export default function ServicesSection() {
                 <path d="M13 5v14"></path>
               </svg>
             </div>
-            <h3 className={styles.cardTitle}>PMU & FDJ Jeux</h3>
+            <h3 className={styles.cardTitle}>PMU & Française des Jeux</h3>
             <p className={styles.cardDescription}>
-              Tentez votre chance ! Borne PMU pour vos paris hippiques en direct, tickets à gratter Illiko, Loto et EuroMillions de la Française des Jeux.
+              Borne PMU pour les courses hippiques. Loto, EuroMillions, Keno et jeux à gratter de la Française des Jeux.
             </p>
+            <p className={styles.cardNotice}>{legalNotices.gambling}</p>
           </div>
 
           <div className={styles.card}>
@@ -53,10 +56,11 @@ export default function ServicesSection() {
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
               </svg>
             </div>
-            <h3 className={styles.cardTitle}>Tabac & Presse</h3>
+            <h3 className={styles.cardTitle}>Presse & Tabac</h3>
             <p className={styles.cardDescription}>
-              Espace tabac complet, cigares, e-cigarettes et liquides. Retrouvez également la presse quotidienne régionale et magazines.
+              La presse quotidienne régionale et nationale, ainsi que les magazines. L&rsquo;établissement assure également la gérance d&rsquo;un débit de tabac.
             </p>
+            <p className={styles.cardNotice}>Vente de tabac interdite aux mineurs de moins de 18 ans.</p>
           </div>
 
         </div>

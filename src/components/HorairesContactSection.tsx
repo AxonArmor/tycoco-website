@@ -1,30 +1,25 @@
 import React from 'react';
+import { site, formatHours, isClosedDay } from '@/config/site';
 import styles from './HorairesContactSection.module.css';
 
 export default function HorairesContactSection() {
-  const schedule = [
-    { day: 'Lundi', hours: '07:30 - 20:00' },
-    { day: 'Mardi', hours: '07:30 - 20:00' },
-    { day: 'Mercredi', hours: '07:30 - 20:00' },
-    { day: 'Jeudi', hours: '07:30 - 20:00' },
-    { day: 'Vendredi', hours: '07:30 - 22:00 (Nocturne)' },
-    { day: 'Samedi', hours: '08:00 - 22:00 (Nocturne)' },
-    { day: 'Dimanche', hours: '08:30 - 13:30 / 17:00 - 20:00' },
-  ];
-
   return (
     <section id="contact" className={styles.horairesSection}>
       <div className={styles.container}>
-        
+
         {/* Left Card: Opening Hours */}
         <div className={styles.hoursCard}>
-          <h2 className={styles.hoursTitle}>Nos Horaires d'Ouverture</h2>
-          
+          <h2 className={styles.hoursTitle}>Nos Horaires d&rsquo;Ouverture</h2>
+
           <div className={styles.scheduleList}>
-            {schedule.map((item, index) => (
-              <div key={index} className={styles.scheduleRow}>
+            {site.schedule.map((item) => (
+              <div key={item.iso} className={styles.scheduleRow}>
                 <span className={styles.day}>{item.day}</span>
-                <span className={styles.hours}>{item.hours}</span>
+                <span
+                  className={isClosedDay(item) ? styles.hoursClosed : styles.hours}
+                >
+                  {formatHours(item)}
+                </span>
               </div>
             ))}
           </div>
@@ -37,7 +32,7 @@ export default function HorairesContactSection() {
           </div>
 
           <h2 className={styles.title}>
-            Venez nous rendre<br />visite à Plougourvest
+            Venez nous rendre<br />visite à {site.city}
           </h2>
 
           <div className={styles.contactCard}>
@@ -50,8 +45,17 @@ export default function HorairesContactSection() {
                 </svg>
               </div>
               <div>
-                <h4 className={styles.itemTitle}>Adresse principale</h4>
-                <p className={styles.itemSub}>Centre Bourg, 29400 Plougourvest</p>
+                <h4 className={styles.itemTitle}>Adresse</h4>
+                <p className={styles.itemSub}>
+                  <a
+                    href={site.google.maps}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.itemLink}
+                  >
+                    {site.address.street}, {site.address.postalCode} {site.address.city}
+                  </a>
+                </p>
               </div>
             </div>
 
@@ -64,7 +68,11 @@ export default function HorairesContactSection() {
               </div>
               <div>
                 <h4 className={styles.itemTitle}>Téléphone</h4>
-                <p className={styles.itemSub}>XX XX XX XX XX</p>
+                <p className={styles.itemSub}>
+                  <a href={`tel:${site.phone.href}`} className={styles.itemLink}>
+                    {site.phone.display}
+                  </a>
+                </p>
               </div>
             </div>
 

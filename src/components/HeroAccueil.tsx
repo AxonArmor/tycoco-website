@@ -6,22 +6,22 @@ export default function HeroAccueil() {
     <section id="accueil" className={styles.heroSection}>
       <div className={styles.contentCol}>
         <div className={styles.badge}>
-          CAFÉ, TABAC, PMU & ÉVÉNEMENTS
+          CAFÉ, TABAC & PMU
         </div>
 
         <h1 className={styles.title}>
-          Le cœur battant et<br />convivial de Plougourvest
+          Le bar du bourg<br />de Plougourvest
         </h1>
 
         <p className={styles.description}>
-          Bienvenue au Ty Coco ! Que ce soit pour votre café du matin, un pari PMU,
-          faire vos jeux FDJ ou partager un moment chaleureux autour de nos événements,
-          notre bistrot de quartier contemporain vous ouvre grand ses portes.
+          Le Ty Coco, c&rsquo;est un bar-tabac de village : le comptoir, la presse
+          du jour, les jeux FDJ et la borne PMU, et une salle de billard au fond.
+          On y passe pour cinq minutes ou pour l&rsquo;après-midi.
         </p>
 
         <div>
           <a href="#contact" className={styles.ctaBtn}>
-            Infos Pratiques & Horaires
+            Horaires & Infos Pratiques
           </a>
         </div>
       </div>

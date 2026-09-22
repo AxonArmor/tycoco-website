@@ -32,7 +32,7 @@
 }
 
 .title {
-  font-family: 'Young Serif', serif;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -73,7 +73,7 @@
 }
 
 .cardTitle {
-  font-family: 'Young Serif', serif;
+  font-family: var(--font-serif), Georgia, serif;
   font-size: 1.35rem;
   font-weight: 400;
   color: #111827;
@@ -104,4 +104,14 @@
   .title {
     font-size: 2.3rem;
   }
+}
+/* Mentions sanitaires et avertissements obligatoires. */
+.cardNotice {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #EDE9E3;
+  width: 100%;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #8A8F97;
 }
