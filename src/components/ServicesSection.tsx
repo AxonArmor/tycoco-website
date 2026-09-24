@@ -58,7 +58,7 @@ export default function ServicesSection() {
             </div>
             <h3 className={styles.cardTitle}>Presse & Tabac</h3>
             <p className={styles.cardDescription}>
-              La presse quotidienne régionale et nationale, ainsi que les magazines. L&rsquo;établissement assure également la gérance d&rsquo;un débit de tabac.
+              La presse quotidienne régionale et nationale. L&rsquo;établissement assure également la gérance d&rsquo;un débit de tabac.
             </p>
             <p className={styles.cardNotice}>Vente de tabac interdite aux mineurs de moins de 18 ans.</p>
           </div>

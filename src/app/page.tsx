@@ -11,7 +11,7 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'BarOrPub',
   name: site.name,
-  description: `Bar, tabac, presse, PMU et Française des Jeux à ${site.city} (Finistère).`,
+  description: `Bar, tabac, presse et Française des Jeux à ${site.city} (Finistère).`,
   url: site.url,
   telephone: site.phone.href,
   icons: {

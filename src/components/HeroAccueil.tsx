@@ -6,7 +6,7 @@ export default function HeroAccueil() {
     <section id="accueil" className={styles.heroSection}>
       <div className={styles.contentCol}>
         <div className={styles.badge}>
-          CAFÉ, TABAC & PMU
+          CAFÉ, TABAC & FDJ
         </div>
 
         <h1 className={styles.title}>
@@ -15,7 +15,7 @@ export default function HeroAccueil() {
 
         <p className={styles.description}>
           Le Ty Coco, c&rsquo;est un bar-tabac de village : le comptoir, la presse
-          du jour, les jeux FDJ et la borne PMU, et une salle de billard au fond.
+          du jour, les jeux FDJ, et une salle de billard au fond.
           On y passe pour cinq minutes ou pour l&rsquo;après-midi.
         </p>
 
