@@ -10,8 +10,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 10rem;
+  padding: 5rem var(--page-x);
   gap: 2rem;
+  min-width: 0;
 }
 
 .badge {
@@ -30,9 +31,9 @@
 
 .title {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.4rem + 2.2vw, 3rem);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .description {
@@ -87,11 +88,7 @@
   }
 
   .contentCol {
-    padding: 3rem 2rem;
-  }
-
-  .title {
-    font-size: 2.4rem;
+    padding: 3.5rem var(--page-x);
   }
 
   .imageCol {
@@ -106,16 +103,21 @@
 }
 
 @media (max-width: 640px) {
-  .title {
-    font-size: 2rem;
+  .contentCol {
+    padding: 2.5rem var(--page-x);
+    gap: 1.25rem;
   }
 
-  .contentCol {
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
+  .description {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .ctaBtn {
+    width: 100%;
   }
 
   .imageCol {
-    height: 300px;
+    height: 260px;
   }
 }

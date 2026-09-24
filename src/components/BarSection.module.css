@@ -1,13 +1,11 @@
 .barSection {
   background-color: #1E1F22;
   color: #FFFFFF;
-  padding: 3rem 5rem;
+  padding: 4rem var(--page-x);
   width: 100%;
 }
 
 .container {
-  margin: auto;
-  padding-left: 5rem;
   display: flex;
   align-items: center;
   gap: 5rem;
@@ -53,7 +51,7 @@
 
 .title {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
   font-weight: 400;
   line-height: 1.2;
 }
@@ -95,12 +93,8 @@
 
   .imageWrapper {
     width: 100%;
-    max-width: 450px;
-    height: 350px;
-  }
-
-  .title {
-    font-size: 2.3rem;
+    max-width: 560px;
+    height: 320px;
   }
 
   .statsGrid {
@@ -110,19 +104,41 @@
 
 @media (max-width: 640px) {
   .barSection {
-    padding: 3.5rem 1.5rem;
+    padding: 3rem var(--page-x);
   }
 
-  .title {
-    font-size: 1.9rem;
+  .container {
+    gap: 2rem;
+  }
+
+  .content {
+    gap: 1.25rem;
   }
 
   .statsGrid {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .statItem {
+    width: 100%;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .statNumber {
+    font-size: 1.3rem;
+  }
+
+  .statLabel {
+    white-space: normal;
+    font-size: 0.95rem;
   }
 
   .imageWrapper {
-    height: 280px;
+    height: 240px;
+    border-radius: 14px;
   }
 }

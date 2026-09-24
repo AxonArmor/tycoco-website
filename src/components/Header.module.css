@@ -12,13 +12,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 3.5rem;
+  gap: 1rem;
+  height: var(--header-h);
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
 }
 
 .leftGroup {
   display: flex;
   align-items: center;
   gap: 1rem;
+  min-width: 0;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  display: block;
+  height: 32px;
+  width: auto;
 }
 
 .subtitle {
@@ -27,12 +41,14 @@
   color: #60646B;
   margin-left: 0.5rem;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .rightGroup {
   display: flex;
   align-items: center;
   gap: 3.5rem;
+  flex-shrink: 0;
 }
 
 .nav {
@@ -49,12 +65,10 @@
   text-decoration: none;
   transition: color 0.2s ease;
   padding: 0.25rem 0;
+  white-space: nowrap;
 }
 
-.nav a:hover {
-  color: #841B2D;
-}
-
+.nav a:hover,
 .nav a.activeLink {
   color: #841B2D;
 }
@@ -63,7 +77,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 1.4rem;
+  gap: 0.5rem;
+  height: 42px;
+  padding: 0 1.4rem;
   border: 1.5px solid #841B2D;
   border-radius: 10px;
   color: #841B2D;
@@ -80,17 +96,81 @@
   color: #ffffff;
 }
 
-@media (max-width: 900px) {
-  .header {
-    padding: 1rem 1.5rem;
+.phoneIcon {
+  display: none;
+}
+
+.menuBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid #841B2D;
+  border-radius: 10px;
+  background: transparent;
+  color: #841B2D;
+  cursor: pointer;
+}
+
+.menuBtn[aria-expanded='true'] {
+  background-color: #841B2D;
+  color: #ffffff;
+}
+
+/* Masquée par défaut : `display` en CSS auteur l'emporterait sinon sur
+   l'attribut `hidden`. Elle n'apparaît qu'ouverte, et sous 1100px. */
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  border-top: 1px solid #C3C3C3;
+  padding: 0.5rem var(--page-x) 1.25rem;
+  background-color: #FAF8F5;
+  box-shadow: 0 16px 24px -12px rgba(0, 0, 0, 0.12);
+  max-height: calc(100dvh - var(--header-h));
+  overflow-y: auto;
+}
+
+.mobileNav a {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #60646B;
+  border-bottom: 1px solid #EDE9E3;
+}
+
+.mobileNav a.activeLink {
+  color: #841B2D;
+}
+
+.mobileNav a.mobileCta {
+  justify-content: center;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #841B2D;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* La nav complète ne tient plus sur une ligne : on passe au menu burger. */
+@media (max-width: 1100px) {
+  .nav {
+    display: none;
   }
 
   .rightGroup {
-    gap: 1.2rem;
+    gap: 0.75rem;
   }
 
-  .nav {
-    gap: 1.2rem;
+  .menuBtn {
+    display: inline-flex;
+  }
+
+  .mobileNav:not([hidden]) {
+    display: flex;
   }
 }
 
@@ -99,56 +179,30 @@
     display: none;
   }
 
-  .nav {
-    display: none;
-  }
-}
-.menuBtn {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1.5px solid #841B2D;
-  border-radius: 10px;
-  background: transparent;
-  color: #841B2D;
-  cursor: pointer;
-}
-
-/* Masquée par défaut : `display` en CSS auteur l'emporterait sinon sur
-   l'attribut `hidden`. Elle n'apparaît qu'ouverte, et sous 640px. */
-.mobileNav {
-  display: none;
-  flex-direction: column;
-  border-top: 1px solid #C3C3C3;
-  padding: 0 1.5rem 0.75rem;
-}
-
-.mobileNav a {
-  padding: 0.85rem 0;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #60646B;
-  border-bottom: 1px solid #EDE9E3;
-}
-
-.mobileNav a:last-child {
-  border-bottom: none;
-}
-
-@media (max-width: 900px) {
-  .topRow {
-    padding: 1rem 1.5rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .menuBtn {
-    display: inline-flex;
+  .logo img {
+    height: 26px;
   }
 
-  .mobileNav:not([hidden]) {
-    display: flex;
+  .rightGroup {
+    gap: 0.5rem;
+  }
+
+  /* Bouton d'appel réduit à l'icône ; le libellé reste lu par les lecteurs d'écran. */
+  .phoneBtn {
+    width: 42px;
+    padding: 0;
+  }
+
+  .phoneIcon {
+    display: block;
+  }
+
+  .phoneLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 }

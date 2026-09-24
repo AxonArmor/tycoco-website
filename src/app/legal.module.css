@@ -78,3 +78,30 @@ a.link:hover {
 .link {
   color:#ae1e1e;
 }
+
+@media (max-width: 640px) {
+  .legalContainer {
+    padding: 2rem var(--page-x) 3.5rem;
+  }
+
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .section {
+    padding: 1.4rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.15rem;
+  }
+
+  .sectionText {
+    font-size: 0.95rem;
+  }
+}

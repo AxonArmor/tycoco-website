@@ -1,6 +1,6 @@
 .horairesSection {
   background-color: var(--background, #FAF8F5);
-  padding: 5rem 5rem 5rem 10rem;
+  padding: 5rem 5rem 5rem var(--page-x);
   width: 100%;
 }
 
@@ -22,8 +22,9 @@
 
 .hoursTitle {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 1.25rem + 1.3vw, 2.2rem);
   font-weight: 400;
+  line-height: 1.2;
   color: #111827;
   margin-bottom: 2rem;
 }
@@ -37,7 +38,8 @@
 .scheduleRow {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  gap: 1rem;
   padding-bottom: 0.85rem;
   border-bottom: 1px dashed #E5E0D8;
 }
@@ -81,7 +83,7 @@
 
 .title {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
   font-weight: 400;
   line-height: 1.2;
   color: #111827;
@@ -103,6 +105,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  min-width: 0;
 }
 
 .icon {
@@ -130,7 +133,7 @@
 
 @media (max-width: 1100px) {
   .horairesSection {
-    padding: 4rem 3rem;
+    padding: 4rem var(--page-x);
   }
   .container {
     grid-template-columns: 1fr;
@@ -140,13 +143,23 @@
 
 @media (max-width: 640px) {
   .horairesSection {
-    padding: 3rem 1.5rem;
+    padding: 3rem var(--page-x);
   }
-  .hoursTitle, .title {
-    font-size: 1.9rem;
+  .container {
+    gap: 2.5rem;
   }
   .hoursCard {
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+  .hoursTitle {
+    margin-bottom: 1.5rem;
+  }
+  .contactCard {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+  .locationCol {
+    gap: 1.25rem;
   }
 }
 
