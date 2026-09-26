@@ -2,11 +2,8 @@
 export type OpeningRange = readonly [open: string, close: string]
 
 export type ScheduleDay = {
-  /** Libellé affiché, en français. */
   readonly day: string
-  /** Jour au format Schema.org (Monday, Tuesday…). */
   readonly iso: string
-  /** Plages d'ouverture ; tableau vide = jour fermé. */
   readonly ranges: readonly OpeningRange[]
 }
 
@@ -26,8 +23,8 @@ export const site = {
   },
 
   phone: {
-    display: '02 98 68 57 10',
-    href: '+33298685710',
+    display: '06 35 10 36 58',
+    href: '+33635103658',
   },
 
   email: 'letycoco29400@gmail.com',
