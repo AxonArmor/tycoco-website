@@ -42,9 +42,9 @@ export default function ServicesSection() {
                 <path d="M13 5v14"></path>
               </svg>
             </div>
-            <h3 className={styles.cardTitle}>PMU & Française des Jeux</h3>
+            <h3 className={styles.cardTitle}>Française des Jeux</h3>
             <p className={styles.cardDescription}>
-              Borne PMU pour les courses hippiques. Loto, EuroMillions, Keno et jeux à gratter de la Française des Jeux.
+              Loto, EuroMillions, Keno et jeux à gratter de la Française des Jeux.
             </p>
             <p className={styles.cardNotice}>{legalNotices.gambling}</p>
           </div>
@@ -58,7 +58,7 @@ export default function ServicesSection() {
             </div>
             <h3 className={styles.cardTitle}>Presse & Tabac</h3>
             <p className={styles.cardDescription}>
-              La presse quotidienne régionale et nationale. L&rsquo;établissement assure également la gérance d&rsquo;un débit de tabac.
+              La presse quotidienne régionale. L&rsquo;établissement assure également la gérance d&rsquo;un débit de tabac.
             </p>
             <p className={styles.cardNotice}>Vente de tabac interdite aux mineurs de moins de 18 ans.</p>
           </div>
