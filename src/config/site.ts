@@ -65,14 +65,6 @@ export const site = {
     rcs: 'RCS Lille Métropole 424 761 419',
   },
 
-  /**
-   * Médiateur de la consommation.
-   * Tout professionnel vendant à des consommateurs doit adhérer à un
-   * dispositif de médiation et en communiquer les coordonnées
-   * (art. L612-1 et L616-1 du code de la consommation).
-   * À COMPLÉTER une fois l'adhésion souscrite ; laisser `name` vide masque
-   * la section correspondante dans les mentions légales.
-   */
   mediator: {
     name: '',
     address: '',
